@@ -2,6 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include <iterator>
+#include <algorithm>
 
 [[ noreturn ]] static void panic() {
     std::exit(EXIT_FAILURE);
