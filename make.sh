@@ -11,4 +11,7 @@ env RUMPRUN_WARNING_STFU='please' cmake --build .
 popd
 
 x86_64-rumprun-netbsd-strip --strip-unneeded build/app.bin
-env RUMPRUN_WARNING_STFU='please' rumprun kvm -i build/app.bin
+
+genisoimage -r -quiet -o build/volume.iso test.txt
+
+env RUMPRUN_WARNING_STFU='please' rumprun kvm -b build/volume.iso,/data -i build/app.bin '/data/test.txt'
