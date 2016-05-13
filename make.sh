@@ -11,7 +11,7 @@ readonly platform=${2:-'hw_generic'}
 # Compile and link app
 mkdir -p build
 pushd build
-cmake .. -DCMAKE_TOOLCHAIN_FILE=${toolchain}
+cmake .. -DCMAKE_TOOLCHAIN_FILE=${toolchain} -DCMAKE_BUILD_TYPE=Release
 cmake --build .
 popd
 
